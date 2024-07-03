@@ -13,7 +13,8 @@ import com.example.lesson07.entity.StudentEntity;
 public class Lesson07Ex01RestController {
 	
 	@Autowired
-	private StudentBO studentBo;
+	private StudentBO studentBO;
+	
 	// C: create
 	@GetMapping("/create")
 	public StudentEntity create() {
@@ -22,6 +23,22 @@ public class Lesson07Ex01RestController {
 		String email = "jibga@aver.com";
 		String dreamJob = "홈프로텍터";
 		
-		return studentBo.addStudent(name, phoneNumber, email, dreamJob);
+		return studentBO.addStudent(name, phoneNumber, email, dreamJob);
+	}
+	
+	// U: Update
+	@GetMapping("/update")
+	public StudentEntity update() {
+		// id가 5번인 dreamJob 변경(홈프로텍터)
+		return	studentBO.updateStudentDreamJobById(5, "기획자");
+	}
+	
+	// D: Delete
+	@GetMapping("/delete")
+	public String delete() {
+		// id가 4번인 데이터 삭제
+		studentBO.deleteStudentById(4);
+		
+		return "삭제 성공";
 	}
 }
