@@ -50,4 +50,10 @@ public class Lesson07Ex02RestController {
 		return studentRepository.findByIdBetween(2, 5);
 		
 	}
+	
+	@GetMapping("/select2")
+	public List<StudentEntity> select2() {
+		// 장래희망이 변호사인 데이터 조회
+		return studentRepository.findByDreamJob("변호사");
+	}
 }
