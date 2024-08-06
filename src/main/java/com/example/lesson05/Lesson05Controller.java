@@ -41,7 +41,7 @@ public class Lesson05Controller {
 		user.put("hobby", "영화");
 		users.add(user);
 		
-		user = new HashMap<>();
+		user = new HashMap<>();asdasd
 		user.put("name", "청길동");
 		user.put("age", "25");
 		user.put("hobby", "요가");
